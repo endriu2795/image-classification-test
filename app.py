@@ -6,9 +6,13 @@ __all__ = ['is_cat', 'learn', 'classify_image', 'categories', 'image', 'label', 
 from fastai.vision.all import *
 import gradio as gr
 
-def is_cat(x): return x[0].isupper()
+# da definire ma inutile a quanto pare
+def is_cat(x): 
+    return x[0].isupper()
 
 # Cell
+
+
 learn = load_learner('model.pkl')
 
 #print (learn.__dict__)
@@ -18,6 +22,17 @@ categories = ('Dog', 'Cat')
 
 def classify_image(img):
     pred,idx,probs = learn.predict(img)
+    print(img)
+    print("----")
+    print(pred)
+    print("----")
+    print(idx)
+    print("----")
+    print(probs)
+    print("----")
+    #print(is_cat(img))
+    print("----")
+    print (dict(zip(categories, map(float,probs))))
     return dict(zip(categories, map(float,probs)))
 
 # Cell

@@ -21,3 +21,6 @@ vim ~/.bashrc
 
 # activate venv 
 source ~/.venv/bin/activate
+
+# pip install gradio==3.50
+# pip install -Uqq fastai
